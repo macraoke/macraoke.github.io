@@ -47,7 +47,7 @@ Error generating stack: `+o.message+`
  * LICENSE.md file in the root directory of this source tree.
  *
  * @license MIT
- */function bp(e){let{basename:t,children:n,window:r}=e,l=L.exports.useRef();l.current==null&&(l.current=Tp({window:r}));let o=l.current,[i,u]=L.exports.useState({action:o.action,location:o.location});return L.exports.useLayoutEffect(()=>o.listen(u),[o]),L.exports.createElement(Jp,{basename:t,children:n,location:i.location,navigationType:i.action,navigator:o})}const eh=[{id:"f-s_Vv82yFw",name:"macron"},{id:"0LxIfs_TbfM",name:"dua"},{id:"nKt1UwZHf_4",name:"arm\xE9e"},{id:"Vs9lO3bD77g",name:"ministres europ\xE9ens"},{id:"8Y8qdB_jcvE",name:"\xE9ducation \xE0 l'UNESCO"}],tf=eh,vu=e=>{const t=tf.filter(n=>n.id!==e);return t[Math.floor(Math.random()*t.length)].id};var Ml={exports:{}},Fl={};/**
+ */function bp(e){let{basename:t,children:n,window:r}=e,l=L.exports.useRef();l.current==null&&(l.current=Tp({window:r}));let o=l.current,[i,u]=L.exports.useState({action:o.action,location:o.location});return L.exports.useLayoutEffect(()=>o.listen(u),[o]),L.exports.createElement(Jp,{basename:t,children:n,location:i.location,navigationType:i.action,navigator:o})}const eh=[{id:"f-s_Vv82yFw",name:"macron"},{id:"nKt1UwZHf_4",name:"arm\xE9e"},{id:"Vs9lO3bD77g",name:"ministres europ\xE9ens"},{id:"8Y8qdB_jcvE",name:"\xE9ducation \xE0 l'UNESCO"}],tf=eh,vu=e=>{const t=tf.filter(n=>n.id!==e);return t[Math.floor(Math.random()*t.length)].id};var Ml={exports:{}},Fl={};/**
  * @license React
  * react-jsx-runtime.production.min.js
  *
