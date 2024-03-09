@@ -11,3 +11,6 @@ export const getRandomVideo = (exclude?: string): string => {
   return searchFrom[Math.floor(Math.random() * searchFrom.length)].id;
 };
 
+export const getNextVideo = (id: string | undefined): string => {
+  return Videos[(Videos.map(v => v.id).indexOf(id ?? '') + 1) % Videos.length].id;
+}

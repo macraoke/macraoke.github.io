@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { getRandomVideo } from "../../interfaces/Video";
+import { getNextVideo, getRandomVideo } from "../../interfaces/Video";
 
 import "./Header.css";
 
@@ -11,7 +11,7 @@ const Header: FC<HeaderProps> = () => {
   const navigate = useNavigate();
 
   const top = () => {
-    navigate("/top");
+    navigate(`/${getNextVideo(params.video)}`);
   };
 
   const random = () => {
@@ -30,7 +30,7 @@ const Header: FC<HeaderProps> = () => {
           Random
         </button>
         <button onClick={top} className="mr-3">
-          Top 10
+          Suivant
         </button>
         <button onClick={beer} className="mr-3">
           🍺 Nous offrir une bière
