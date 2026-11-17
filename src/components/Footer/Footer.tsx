@@ -1,12 +1,10 @@
 import { FC } from "react";
 
-import "./Footer.css";
-
 interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => (
-  <main className="footer">
-    <p className="mr-4">
+  <footer className="mt-10 flex flex-wrap justify-center gap-x-4 gap-y-1 border-t border-white/10 pt-5 text-center text-sm text-zinc-500">
+    <p>
       Inspiré par{" "}
       <a
         target="_blank"
@@ -17,7 +15,7 @@ const Footer: FC<FooterProps> = () => (
       </a>
     </p>
     <p>
-      Publication:{" "}
+      Publication :{" "}
       <a
         target="_blank"
         rel="noreferrer"
@@ -31,17 +29,19 @@ const Footer: FC<FooterProps> = () => (
         href="https://twitter.com/roger_miret"
       >
         @roger_miret
-      </a>{" "}
-      — (<a href="legal.txt">Mentions&nbsp;légales</a>) —{" "}
+      </a>
+    </p>
+    <p>
+      <a href={`${import.meta.env.BASE_URL}legal.txt`}>Mentions&nbsp;légales</a> —{" "}
       <a
         target="_blank"
         rel="noreferrer"
-        href="https://github.com/macraoke/macraoke"
+        href="https://github.com/macraoke/macraoke.github.io"
       >
         Code source
       </a>
     </p>
-  </main>
+  </footer>
 );
 
 export default Footer;

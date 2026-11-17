@@ -2,6 +2,7 @@ import VideosJson from "../assets/videos.json";
 
 export interface IVideos {
   id: string;
+  name: string;
 }
 
 export const Videos: IVideos[] = VideosJson as IVideos[];

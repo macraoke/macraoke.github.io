@@ -1,8 +1,6 @@
 import { FC } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { getNextVideo, getRandomVideo } from "../../interfaces/Video";
-
-import "./Header.css";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { getNextVideo, getRandomVideo, Videos } from "../../interfaces/Video";
 
 interface HeaderProps {}
 
@@ -18,25 +16,45 @@ const Header: FC<HeaderProps> = () => {
     navigate(`/${getRandomVideo(params.video)}`);
   };
 
-  const beer = () => {
-    window.open("http://buymeacoffee.com/Macraoke", "_blank");
-  };
-
   return (
-    <main className="header grid grid-cols-1 mb-5">
-      <h1 className="text-3xl font-bold mb-4">Macraoke</h1>
-      <div className="flex flex-row">
-        <button onClick={() => random()} className="mr-3">
-          Random
-        </button>
-        <button onClick={top} className="mr-3">
-          Suivant
-        </button>
-        <button onClick={beer} className="mr-3">
-          🍺 Nous offrir une bière
-        </button>
+    <header className="mb-5 space-y-4">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h1 className="text-3xl font-bold tracking-tight">
+          <Link to="/" className="text-white no-underline hover:text-white">
+            🎤 Macraoke
+          </Link>
+        </h1>
+        <nav className="flex flex-wrap gap-2">
+          <button type="button" onClick={random} className="btn">
+            🔀 Aléatoire
+          </button>
+          <button type="button" onClick={top} className="btn">
+            Suivant ⏭
+          </button>
+          <a
+            href="https://buymeacoffee.com/Macraoke"
+            target="_blank"
+            rel="noreferrer"
+            className="btn"
+          >
+            🍺 Nous offrir une bière
+          </a>
+        </nav>
       </div>
-    </main>
+      <ul className="-mx-1 flex flex-wrap gap-1">
+        {Videos.map((video) => (
+          <li key={video.id}>
+            <Link
+              to={`/${video.id}`}
+              className="chip block"
+              aria-current={video.id === params.video ? "page" : undefined}
+            >
+              {video.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </header>
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { IWord } from '../../interfaces/Word';
-import './Word.scss';
+import './Word.css';
 
 interface WordProps extends IWord { }
 
@@ -9,13 +9,12 @@ const Word: React.FC<WordProps> = (props) => {
 
     useEffect(() => {
         setActivated(false);
-        if (props.activationDelay !== undefined)
-            setTimeout(setActivated, props.activationDelay, true);
+        if (props.activationDelay === undefined) return;
+        const id = setTimeout(setActivated, props.activationDelay, true);
+        return () => clearTimeout(id);
     }, [props.activationDelay]);
 
-    return (<>
-        <span className={activated ? 'on' : 'off'}>{props.word} </span>
-    </>)
+    return <span className={`word ${activated ? 'on' : 'off'}`}>{props.word} </span>;
 };
 
 export default Word;
