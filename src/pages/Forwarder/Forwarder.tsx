@@ -1,8 +1,8 @@
 import { Navigate } from "react-router-dom";
-import { getRandomVideo } from "../../interfaces/Video";
+import { Videos } from "../../interfaces/Video";
 
 function Forwarder() {
-  return <Navigate to={`/${getRandomVideo()}`} replace />;
+  return <Navigate to={`/${Videos[0].id}`} replace />;
 }
 
 export default Forwarder;
