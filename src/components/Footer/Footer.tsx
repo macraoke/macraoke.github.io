@@ -36,7 +36,7 @@ const Footer: FC<FooterProps> = () => (
       <a
         target="_blank"
         rel="noreferrer"
-        href="https://github.com/macraoke/macraoke.github.io"
+        href="https://github.com/ultragaucheforce/macraoke"
       >
         Code source
       </a>
